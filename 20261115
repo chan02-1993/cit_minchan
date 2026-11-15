@@ -1,0 +1,39 @@
+n = int(input())
+numList = input()
+numList = numList.split()
+numList = map(int,numList)
+numList = list(numList)
+rangeList = []
+
+for y in range(n):
+    for x in range(n-y):
+        rangeList.append([x,x+y])
+
+def afe(ran):
+    sum = 0
+    min = ran[0]
+    max = ran[1]
+    
+    for x in range(min, max+1):
+        sum += numList[x]
+        
+    length = max - min + 1
+    
+    average = sum/length
+    
+    for x in range(min, max+1):
+        if numList[x] == average:
+            return True
+    return False
+
+count = 0
+
+for x in range(len(rangeList)):
+    if afe(rangeList[x]):
+        count += 1
+
+print(count)
+
+
+
+
