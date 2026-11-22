@@ -1,0 +1,66 @@
+"N = int(input())
+cows = list(map(int, input().split()))
+
+odd = 0
+even = 0
+
+result = 0
+
+mGroups = 0
+
+for i in range(len(cows)):
+    if cows[i] % 2 == 0:
+        even += 1
+    elif cows[i] % 2 == 1:
+        odd += 1
+
+if even == odd:
+    result = N
+    
+elif even > odd:
+    result = odd * 2 + 1
+    
+elif even < odd:
+    r = odd - even
+        
+    if r % 3 == 0:
+        mGroups = (r // 3) * 2
+    elif r % 3 == 1:
+        mGroups = (r // 3) * 2 - 1
+    elif r % 3 == 2:
+        mGroups = (r // 3) * 2 + 1
+        
+    result = (odd-r)*2 + mGroups
+        
+print(result)
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    "
+"alphabet = input()
+word = input()
+
+i = 0
+count = 0
+
+while i < len(word):
+    count += 1
+
+    for letter in alphabet:
+        if letter == word[i]:
+            i += 1
+
+        if i == len(word):
+            break
+
+print(count)
+"
